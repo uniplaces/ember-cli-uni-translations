@@ -1,0 +1,67 @@
+{
+  "name": "translations",
+  "version": "0.0.1",
+  "description": "Manage translations using google spreadsheets.",
+  "directories": {
+    "doc": "doc",
+    "test": "tests",
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "ember build",
+    "start": "ember server",
+    "test": "ember try:each"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uniplaces/translations"
+  },
+  "bugs": {
+    "url": "https://github.com/uniplaces/translations/issues"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": {
+    "name": "raffo0707@gmail.com at uniplaces"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "broccoli-asset-rev": "^2.4.2",
+    "ember-ajax": "^2.0.1",
+    "ember-cli": "2.6.3",
+    "ember-cli-app-version": "^1.0.0",
+    "ember-cli-dependency-checker": "^1.2.0",
+    "ember-cli-htmlbars": "^1.0.3",
+    "ember-cli-htmlbars-inline-precompile": "^0.3.1",
+    "ember-cli-inject-live-reload": "^1.4.0",
+    "ember-cli-jshint": "^1.0.0",
+    "ember-cli-qunit": "^1.4.0",
+    "ember-cli-release": "^0.2.9",
+    "ember-cli-sri": "^2.1.0",
+    "ember-cli-uglify": "^1.2.0",
+    "ember-data": "^2.6.0",
+    "ember-disable-prototype-extensions": "^1.1.0",
+    "ember-export-application-global": "^1.0.5",
+    "ember-load-initializers": "^0.5.1",
+    "ember-resolver": "^2.0.3",
+    "ember-welcome-page": "^1.0.1",
+    "loader.js": "^4.0.1"
+  },
+  "keywords": [
+    "ember-addon",
+    "translations",
+    "google-spreadsheet",
+    "uniplaces"
+  ],
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "ember-cli-babel": "^5.1.10",
+    "google-spreadsheet": "^2.0.3",
+    "lodash": "^4.16.6",
+    "silent-error": "^1.0.1"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  }
+}
