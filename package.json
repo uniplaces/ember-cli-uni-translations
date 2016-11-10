@@ -1,6 +1,6 @@
 {
   "name": "translations",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Manage translations using google spreadsheets.",
   "directories": {
     "doc": "doc",
