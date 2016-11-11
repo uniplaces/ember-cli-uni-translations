@@ -1,5 +1,5 @@
 {
-  "name": "translations",
+  "name": "ember-cli-uni-translations",
   "version": "0.0.2",
   "description": "Manage translations using google spreadsheets.",
   "directories": {
