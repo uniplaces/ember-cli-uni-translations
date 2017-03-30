@@ -1,40 +1,72 @@
-# translations
+# ember-cli-uni-translations
 
-`npm i ember-cli-uni-translations --save`
+This add-on provides a client (cli) to make it easier to manage translations which are stored using Google Spreadsheets. It provides two commands: one to get all translations and one to set a translation.
+It stores the translations under a default folder: `app/locales`.
 
-Ember addon to manage translations using google spreadsheet.
+This add-on generates a different file for each locale, consisting of JSONs with the translations key and value.
 
-Managing translations with google spreadsheet can be painfull when developing a feature.
-Translations is a cli for ember projects to get/set translations using a specific spreadsheet-tab standard setting translations under `app/locales`.
+## Installation
 
-Translations spredsheet will be formatted with a key column to store the key for the translation and two column for each locale, the tranlation itself and the status.
+To install ember-cli-uni-translations you just need npm.
 
-# configuration
-In the importer project define the following properties:
- - *spreadsheetId*: id of the spreadsheet managing the translations (the long id in the spreadsheet url);
- - *spreadsheet_cred_file*: path to the credentials file (relative to the root of the project);
- - *locales*: list of locales to expect in the spreadsheet, ex.: ['en-gb', 'es-es', 'it-it', 'pt-pt', 'de-de'];
- - *keyCol*: title of the column containing the translation key.
+```bash
+$ npm install ember-cli-uni-translations
+```
 
-# Usage
-After setting the configs, from root of the ember project, in order to download translations from the spreadsheet to the locales folder, run:
+## Setup
 
-`ember translate:get -t <tab_name>`
+In order to setup ember-cli-uni-translations for your project, you will need to configure your Ember `environment.js`.
 
-To set a key in the spreadsheet run:
+```js
+ENV.uniTranslations = {
+  spreadsheetId: 'fake-spreadsheet-id',
+  spreadsheetCredentialsFile: 'config/dummy.json',
+  keyColumn: 'forbiddenaccesslabeldonottouch',
+  locales: ['en-gb', 'es-es', 'it-it', 'pt-pt', 'de-de']
+}
+```
 
-`ember translate:set -t <tab_name> -k <my.translation.key> -s '<my great tranlation sentence>' -d <locale_for_sentence>`
+The `spreadsheetCredentialsFile` represents the relative path to your credentials file, given your project's root directory.
 
-The command will populate the first free line in the spreadsheet translating the sentence for the specified locales and setting the status to "ok" for the specified locale and "need attention" for the locales translated with google translate.
+## Available commands
 
-*N.B.* 
-- The locale has to be in the as defined in the config
-- *GOOGLE TRANSLATE should be thought as a placeholder, always check the result for the translated languages*
+### Get all translations
 
-# *Work in progress* todo
- - Read configurations from uni-translations inside ENV.
- - Verify for existing key.
- -  set parsing csv.
- - escape translation for google tranlate function in the spreadsheet.
- 
- # Suggest us improvements, open an issue!
+To get all translations, simply run the following command on your terminal:
+
+```bash
+$ ember translate:get -t <spreadsheetTabName>
+```
+
+* `spreadsheetTabName`: the tab name from the Google spreadsheet where the translations are to be kept. Example: `self_service`.
+
+### Set a translation
+
+To set a translation, run the following command on your terminal:
+
+```bash
+$ ember translate:set -t <spreadsheetTabName> -k <key> -s <value> -d <originalLocale>
+```
+
+* `spreadsheetTabName`: the tab name from the Google spreadsheet where the translations are to be kept. Example: `self_service`.
+* `key`: the desired translation key. Example: `footer.titles.come_again`.
+* `value`: the translation itself. Currently you might face some issues with unescaped characters. Example: `Come again!`.
+* `originalLocale`: the locale in which `value` is written. Example: `en-gb`.
+
+## Current TODOs:
+
+* Verify if a translation key already existed and overwrite or discard
+* Escape strings when setting translation
+* Use same locale notation as i18n
+
+## LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2017
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

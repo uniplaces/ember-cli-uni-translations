@@ -1,9 +1,12 @@
+/* global module, require */
 'use strict';
 
 let commands = require('./lib/commands');
 
 module.exports = {
-  name: 'uni-translations',
+  name: 'ember-cli-uni-translations',
 
-  includedCommands: function () {return commands;}
+  includedCommands() {
+    return commands;
+  }
 };
