@@ -10,7 +10,7 @@ This add-on generates a different file for each locale, consisting of JSONs with
 To install ember-cli-uni-translations you just need npm.
 
 ```bash
-$ npm install ember-cli-uni-translations
+$ ember install ember-cli-uni-translations
 ```
 
 ## Setup
