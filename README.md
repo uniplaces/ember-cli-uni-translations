@@ -54,13 +54,13 @@ $ ember translate:get -t <spreadsheetTabName>
 To set a translation, run the following command on your terminal:
 
 ```bash
-$ ember translate:set -t <spreadsheetTabName> -k <key> -s <value> -d <originalLocale>
+$ ember translate:set -t <spreadsheetTabName> -k <key> -s <value> -d [originalLocale]
 ```
 
 * `spreadsheetTabName`: the tab name from the Google spreadsheet where the translations are to be kept. Example: `self_service`.
 * `key`: the desired translation key. Example: `footer.titles.come_again`.
 * `value`: the translation itself. Currently you might face some issues with unescaped characters. Example: `Come again!`.
-* `originalLocale`: the locale in which `value` is written. Example: `en-gb`.
+* `originalLocale`: the locale in which `value` is written. Default: `en-gb`.
 
 ## Current TODOs:
 
