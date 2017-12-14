@@ -1,5 +1,10 @@
 # ember-cli-uni-translations
 
+[![npm version](https://badge.fury.io/js/ember-cli-uni-translations.svg)](https://badge.fury.io/js/ember-cli-uni-translations)
+[![Build Status](https://travis-ci.org/uniplaces/ember-cli-uni-translations.svg?branch=master)](https://travis-ci.org/uniplaces/ember-cli-uni-translations)
+[![dependencies](https://david-dm.org/uniplaces/ember-cli-uni-translations.svg)](https://david-dm.org/uniplaces/eember-cli-uni-translations)
+[![devDependencies](https://david-dm.org/uniplaces/ember-cli-uni-translations/dev-status.svg)](https://david-dm.org/uniplaces/ember-cli-uni-translations?type=dev)
+
 This add-on provides a client (cli) to make it easier to manage translations which are stored using Google Spreadsheets. It provides two commands: one to get all translations and one to set a translation.
 It stores the translations under a default folder: `app/locales`.
 
