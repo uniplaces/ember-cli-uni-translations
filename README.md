@@ -27,6 +27,7 @@ ENV.uniTranslations = {
   spreadsheetId: 'fake-spreadsheet-id',
   spreadsheetCredentialsFile: 'config/dummy.json',
   keyColumn: 'forbiddenaccesslabeldonottouch',
+  defaultLocale: 'pt-pt', // This is optional and defaults to "en-gb"
   locales: ['en-gb', 'es-es', 'it-it', 'pt-pt', 'de-de']
 }
 ```
@@ -37,10 +38,16 @@ The `spreadsheetCredentialsFile` represents the relative path to your credential
 
 #### Get all translations
 
-To get all translations, simply run the following command on your terminal:
+To get all translations, simply run the following command on your terminal.
 
 ```bash
 $ ember translate:get
+```
+
+This addon ignores empty strings by default, but you can disable this behaviour by passing the ```-ies``` to the command above.
+
+```bash
+$ ember translate:get -ies=false
 ```
 
 #### Get translations by spreadsheet tab

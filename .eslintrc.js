@@ -15,6 +15,6 @@ module.exports = {
   },
   rules: {
     "camelcase": [0, {"properties": "never"}],
-    "no-console": ["error", { allow: ["warn", "error"] }]
+    "no-console": ["error", { allow: ["warn", "error", "info"] }]
   }
 };
